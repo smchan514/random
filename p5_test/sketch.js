@@ -17,7 +17,7 @@ let y = 400;
 let dx = 0;
 let dy = 0;
 let angle = 0;
-let dangle = 0.05;
+let dangle = 0.01;
 
 function draw(){
   let spectrum = fft.analyze();
@@ -29,7 +29,7 @@ function draw(){
     let radius = map(i, 0, spectrum.length/2, 0, width);
     let iRed = spectrum[i];
     stroke(0, iRed, 0);
-    arc(x, y, radius, radius, angle, angle + PI / 8);
+    arc(x, y, radius, radius, angle, angle + 2*dangle);
   }
 
   x += dx;
